@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="car" class="com.example.pojo.Car"
+          init-method="myInit"
+          destroy-method="myDestroy"
+          p:brand="Land Rover"
+          p:maxSpeed="200"/>
+    <!--工厂后处理器-->
+    <bean id="myBeanPostProcessor" class="com.example.beanfactory.MyBeanPostProcessor"/>
+    <!--注册bean后处理器-->
+    <bean id="myBeanFactoryPostProcessor" class="com.example.beanfactory.MyBeanFactoryPostProcessor"/>
+
+</beans>
